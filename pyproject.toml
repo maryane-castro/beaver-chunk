@@ -1,0 +1,25 @@
+[project]
+name = "beaver-chunk"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "maryane-castro",email = "maryane.castro993@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11,<4.0"
+package-mode = false
+dependencies = [
+    "langchain-text-splitters (>=0.3.11,<0.4.0)",
+    "langchain-community (>=0.3.29,<0.4.0)",
+    "pypdf (>=6.1.0,<7.0.0)",
+    "langchain-huggingface (>=0.3.1,<0.4.0)",
+    "black (>=25.9.0,<26.0.0)",
+    "sentence-transformers (>=5.1.1,<6.0.0)",
+    "langchain-chroma (>=0.1.2)",
+    "rank-bm25 (>=0.2.2)",
+    "torch (>=2.0.0)"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
