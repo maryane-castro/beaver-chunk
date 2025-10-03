@@ -1,7 +1,7 @@
 from langchain_community.document_loaders.pdf import PyPDFLoader
 from src.document_loaders.abstract_document_loaders import ABC_DocumentLoaders
 
-from src.utils.pos_processor.for_document_loader import process_PDF
+from src.utils.data_process.pos_processor.for_document_loader import process_PDF
 
 
 class PDF_Loader(ABC_DocumentLoaders):

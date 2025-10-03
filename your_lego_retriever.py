@@ -13,7 +13,7 @@ Vector_Store = get_vector_store(
     name="chroma",
     collection_name="my_collection",
     embeddings=embedding_instance,
-    persist_directory="./chroma_langchain_db",
+    persist_directory="./data/chroma_langchain_db",
 )
 
 
@@ -21,3 +21,4 @@ Vector_Store = get_vector_store(
 instance_vector_store = Vector_Store.get_instance_vector_store()
 retriever = instance_vector_store.as_retriever()
 docs = retriever.invoke("what did the president say about ketanji brown jackson?")
+print(docs)

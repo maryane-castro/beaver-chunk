@@ -1,0 +1,128 @@
+{
+  "datasets": [
+    {
+      "query": "Quais são os principais benefícios da inteligência artificial na medicina?",
+      "documentos_esperados": [
+        "A inteligência artificial na medicina permite diagnósticos mais precisos através da análise de imagens médicas, identificando padrões que podem passar despercebidos ao olho humano.",
+        "IA acelera o desenvolvimento de novos medicamentos, reduzindo o tempo de pesquisa de anos para meses através de simulações computacionais e análise de grandes volumes de dados.",
+        "Sistemas de IA auxiliam médicos na tomada de decisões clínicas, fornecendo recomendações baseadas em evidências de milhões de casos similares."
+      ],
+      "documentos_retriever": [
+        "A inteligência artificial na medicina permite diagnósticos mais precisos através da análise de imagens médicas, identificando padrões que podem passar despercebidos ao olho humano.",
+        "IA acelera o desenvolvimento de novos medicamentos, reduzindo o tempo de pesquisa de anos para meses através de simulações computacionais e análise de grandes volumes de dados.",
+        "A tecnologia médica moderna utiliza equipamentos avançados como ressonância magnética e tomografia computadorizada para visualização interna do corpo.",
+        "O uso de robôs em cirurgias permite maior precisão em procedimentos minimamente invasivos, reduzindo o tempo de recuperação dos pacientes.",
+        "Inteligência artificial é um campo da ciência da computação que desenvolve sistemas capazes de realizar tarefas que normalmente requerem inteligência humana."
+      ]
+    },
+    {
+      "query": "Como funciona o processo de fotossíntese nas plantas?",
+      "documentos_esperados": [
+        "A fotossíntese é o processo pelo qual as plantas convertem luz solar, água e dióxido de carbono em glicose e oxigênio, utilizando a clorofila presente nas folhas.",
+        "Durante a fase clara da fotossíntese, a energia luminosa é capturada pelos cloroplastos e convertida em ATP e NADPH, que são utilizados na fase escura.",
+        "O ciclo de Calvin, que ocorre no estroma dos cloroplastos, fixa o CO2 atmosférico em moléculas orgânicas através de uma série de reações bioquímicas."
+      ],
+      "documentos_retriever": [
+        "A fotossíntese é o processo pelo qual as plantas convertem luz solar, água e dióxido de carbono em glicose e oxigênio, utilizando a clorofila presente nas folhas.",
+        "As plantas necessitam de nutrientes do solo como nitrogênio, fósforo e potássio para crescer saudáveis e produzir flores e frutos.",
+        "Durante a fase clara da fotossíntese, a energia luminosa é capturada pelos cloroplastos e convertida em ATP e NADPH, que são utilizados na fase escura.",
+        "A respiração celular é o processo inverso da fotossíntese, onde a glicose é quebrada para produzir energia na forma de ATP.",
+        "As plantas possuem diferentes tipos de tecidos: xilema para transporte de água e floema para transporte de nutrientes."
+      ]
+    },
+    {
+      "query": "Quais são as melhores práticas para desenvolvimento de APIs RESTful?",
+      "documentos_esperados": [
+        "APIs RESTful devem usar métodos HTTP apropriados: GET para leitura, POST para criação, PUT/PATCH para atualização e DELETE para remoção de recursos.",
+        "Versionamento de API é essencial para manter compatibilidade. Use prefixos como /v1/ ou headers HTTP para indicar a versão da API.",
+        "Implemente paginação para endpoints que retornam listas grandes, utilizando parâmetros como limit e offset ou cursor-based pagination.",
+        "Use códigos de status HTTP corretos: 200 para sucesso, 201 para criação, 400 para erro do cliente, 401 para não autorizado, 404 para não encontrado, 500 para erro do servidor."
+      ],
+      "documentos_retriever": [
+        "APIs RESTful devem usar métodos HTTP apropriados: GET para leitura, POST para criação, PUT/PATCH para atualização e DELETE para remoção de recursos.",
+        "GraphQL é uma alternativa ao REST que permite aos clientes especificar exatamente quais dados precisam, evitando over-fetching.",
+        "Versionamento de API é essencial para manter compatibilidade. Use prefixos como /v1/ ou headers HTTP para indicar a versão da API.",
+        "SOAP é um protocolo de comunicação baseado em XML usado para trocar informações estruturadas em serviços web.",
+        "Implemente paginação para endpoints que retornam listas grandes, utilizando parâmetros como limit e offset ou cursor-based pagination."
+      ]
+    },
+    {
+      "query": "Explique o conceito de blockchain e suas aplicações",
+      "documentos_esperados": [
+        "Blockchain é uma tecnologia de registro distribuído que armazena dados em blocos conectados cronologicamente através de criptografia, garantindo imutabilidade e transparência.",
+        "Cada bloco contém um hash do bloco anterior, timestamp e dados de transações, formando uma cadeia que não pode ser alterada sem consenso da rede.",
+        "Aplicações incluem criptomoedas como Bitcoin, contratos inteligentes em Ethereum, rastreamento de supply chain, sistemas de votação eletrônica e registros médicos seguros."
+      ],
+      "documentos_retriever": [
+        "Blockchain é uma tecnologia de registro distribuído que armazena dados em blocos conectados cronologicamente através de criptografia, garantindo imutabilidade e transparência.",
+        "Bitcoin foi a primeira criptomoeda criada em 2009 por Satoshi Nakamoto, estabelecendo o conceito de moeda digital descentralizada.",
+        "Mineração de criptomoedas é o processo de validação de transações e adição de novos blocos à blockchain através de resolução de problemas matemáticos complexos.",
+        "Aplicações incluem criptomoedas como Bitcoin, contratos inteligentes em Ethereum, rastreamento de supply chain, sistemas de votação eletrônica e registros médicos seguros.",
+        "NFTs (Non-Fungible Tokens) são ativos digitais únicos registrados em blockchain que representam propriedade de itens digitais ou físicos."
+      ]
+    },
+    {
+      "query": "Qual é a diferença entre machine learning supervisionado e não supervisionado?",
+      "documentos_esperados": [
+        "Machine learning supervisionado utiliza dados rotulados para treinar modelos, onde cada exemplo de entrada tem uma saída esperada conhecida, usado para classificação e regressão.",
+        "Aprendizado não supervisionado trabalha com dados não rotulados, descobrindo padrões e estruturas ocultas nos dados através de técnicas como clustering e redução de dimensionalidade.",
+        "Exemplos supervisionados incluem classificação de spam, previsão de preços e diagnóstico médico. Não supervisionados incluem segmentação de clientes, detecção de anomalias e sistemas de recomendação."
+      ],
+      "documentos_retriever": [
+        "Machine learning supervisionado utiliza dados rotulados para treinar modelos, onde cada exemplo de entrada tem uma saída esperada conhecida, usado para classificação e regressão.",
+        "Deep learning é um subconjunto de machine learning que usa redes neurais artificiais com múltiplas camadas para aprender representações de dados.",
+        "Aprendizado não supervisionado trabalha com dados não rotulados, descobrindo padrões e estruturas ocultas nos dados através de técnicas como clustering e redução de dimensionalidade.",
+        "Aprendizado por reforço é um tipo de ML onde um agente aprende a tomar decisões através de interações com um ambiente, recebendo recompensas ou punições.",
+        "Transfer learning permite usar conhecimento adquirido em uma tarefa para melhorar o desempenho em outra tarefa relacionada."
+      ]
+    },
+    {
+      "query": "Como otimizar consultas SQL em bancos de dados relacionais?",
+      "documentos_esperados": [
+        "Use índices apropriados nas colunas frequentemente usadas em WHERE, JOIN e ORDER BY para acelerar a busca e ordenação de dados.",
+        "Evite SELECT * e especifique apenas as colunas necessárias para reduzir a transferência de dados e melhorar o desempenho.",
+        "Analise o plano de execução com EXPLAIN para identificar gargalos e otimizar joins, preferindo INNER JOIN quando possível.",
+        "Implemente cache de consultas frequentes e considere desnormalização estratégica para queries complexas que são executadas repetidamente."
+      ],
+      "documentos_retriever": [
+        "Use índices apropriados nas colunas frequentemente usadas em WHERE, JOIN e ORDER BY para acelerar a busca e ordenação de dados.",
+        "NoSQL são bancos de dados não relacionais que oferecem flexibilidade de esquema e escalabilidade horizontal para grandes volumes de dados.",
+        "Evite SELECT * e especifique apenas as colunas necessárias para reduzir a transferência de dados e melhorar o desempenho.",
+        "Normalização de banco de dados é o processo de organizar dados para reduzir redundância e melhorar integridade dos dados.",
+        "Transações ACID garantem atomicidade, consistência, isolamento e durabilidade em operações de banco de dados."
+      ]
+    },
+    {
+      "query": "Quais são os princípios SOLID em programação orientada a objetos?",
+      "documentos_esperados": [
+        "Single Responsibility Principle (SRP): Uma classe deve ter apenas uma razão para mudar, ou seja, deve ter apenas uma responsabilidade.",
+        "Open/Closed Principle (OCP): Classes devem estar abertas para extensão mas fechadas para modificação.",
+        "Liskov Substitution Principle (LSP): Objetos de uma subclasse devem poder substituir objetos da classe pai sem quebrar a aplicação.",
+        "Interface Segregation Principle (ISP): Clientes não devem ser forçados a depender de interfaces que não utilizam.",
+        "Dependency Inversion Principle (DIP): Módulos de alto nível não devem depender de módulos de baixo nível, ambos devem depender de abstrações."
+      ],
+      "documentos_retriever": [
+        "Single Responsibility Principle (SRP): Uma classe deve ter apenas uma razão para mudar, ou seja, deve ter apenas uma responsabilidade.",
+        "Open/Closed Principle (OCP): Classes devem estar abertas para extensão mas fechadas para modificação.",
+        "Design patterns são soluções reutilizáveis para problemas comuns em desenvolvimento de software, como Singleton, Factory e Observer.",
+        "Liskov Substitution Principle (LSP): Objetos de uma subclasse devem poder substituir objetos da classe pai sem quebrar a aplicação.",
+        "Clean Code enfatiza a importância de escrever código legível, com nomes significativos e funções pequenas e focadas."
+      ]
+    },
+    {
+      "query": "Como funciona o protocolo HTTPS e por que é importante?",
+      "documentos_esperados": [
+        "HTTPS adiciona uma camada de segurança SSL/TLS sobre HTTP, criptografando dados transmitidos entre cliente e servidor para prevenir interceptação.",
+        "O processo de handshake TLS estabelece uma conexão segura através de certificados digitais, verificando a identidade do servidor e negociando algoritmos de criptografia.",
+        "HTTPS protege contra ataques man-in-the-middle, garante integridade dos dados e é essencial para transações financeiras, login de usuários e proteção de dados sensíveis."
+      ],
+      "documentos_retriever": [
+        "HTTPS adiciona uma camada de segurança SSL/TLS sobre HTTP, criptografando dados transmitidos entre cliente e servidor para prevenir interceptação.",
+        "HTTP/2 é uma versão mais recente do protocolo HTTP que oferece melhor desempenho através de multiplexação, compressão de headers e server push.",
+        "Cookies são pequenos arquivos de texto armazenados no navegador para manter informações de sessão e preferências do usuário.",
+        "O processo de handshake TLS estabelece uma conexão segura através de certificados digitais, verificando a identidade do servidor e negociando algoritmos de criptografia.",
+        "CORS (Cross-Origin Resource Sharing) é um mecanismo que permite recursos restritos em uma página web serem solicitados de outro domínio."
+      ]
+    }
+  ]
+}

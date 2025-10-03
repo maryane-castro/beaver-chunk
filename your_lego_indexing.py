@@ -28,8 +28,9 @@ Vector_Store = get_vector_store(
     name="chroma",
     collection_name="my_collection",
     embeddings=embedding_instance,
-    persist_directory="./chroma_langchain_db",
+    persist_directory="./data/chroma_langchain_db",
 )
 
 # indexing
 Vector_Store.add(chunks)
+
