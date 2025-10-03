@@ -33,4 +33,3 @@ Vector_Store = get_vector_store(
 
 # indexing
 Vector_Store.add(chunks)
-
