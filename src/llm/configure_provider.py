@@ -3,6 +3,8 @@ import openai
 
 class LLM:
     def __init__(self, base_url="https://api.groq.com/openai/v1", api_key=None):
+        self.base_url = base_url
+        self.api_key = api_key
         self.client = openai.OpenAI(base_url=base_url, api_key=api_key)
 
     def get_client(self):

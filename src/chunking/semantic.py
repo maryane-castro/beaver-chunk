@@ -12,7 +12,5 @@ class Semantic(ABC_Chunking):
 
     def split_document(self, documents):
         chunks = self.splitter.split_documents(documents)
-        for chunk in chunks:
-            chunk.page_content = self.remove_irrelevant_characters(chunk.page_content)
 
         return chunks

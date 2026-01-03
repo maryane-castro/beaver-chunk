@@ -6,7 +6,7 @@ import os
 load_dotenv()
 
 # CREATE EMBEDDINGS
-Embedding = get_embedding(name="huggingface", model_name="BAAI/bge-small-en")
+Embedding = get_embedding(name="huggingface", model_name="BAAI/bge-large-en")
 embedding_instance = Embedding.get_instance_for_vector_store()
 
 
@@ -35,7 +35,11 @@ for i in docs:
     n += 1
 
 
-llm = LLM(base_url=os.getenv("GROQ_BASE_URL"), api_key=os.getenv("GROQ_MODEL"))
+llm = LLM(base_url=os.getenv("GROQ_BASE_URL"), api_key=os.getenv("GROQ_API_KEY"))
 
 
-response = llm.get_client()
+response = llm.generate_response(
+    user_input=question,
+    docs_retriever=docs
+)
+print("\n\n\n", response)
