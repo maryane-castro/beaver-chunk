@@ -3,7 +3,7 @@ from src.factory import get_embedding, get_vector_store
 
 # CREATE EMBEDDINGS
 Embedding = get_embedding(
-    name="huggingface", model_name="BAAI/bge-large-en"
+    name="huggingface", model_name="BAAI/bge-small-en"
 )
 embedding_instance = Embedding.get_instance_for_vector_store()
 

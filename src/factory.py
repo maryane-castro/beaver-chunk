@@ -1,4 +1,4 @@
-from src.chunking import character, recursive
+from src.chunking import character, recursive, semantic
 from src.embedding import huggingface
 from src.vector_store import chroma
 
@@ -7,6 +7,7 @@ from src.vector_store import chroma
 _CHUNKERS = {
     "character": character.Character,
     "recursive": recursive.Recursive,
+    "semantic" : semantic.Semantic
 }
 
 

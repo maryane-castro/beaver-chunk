@@ -25,12 +25,12 @@ if errors:
 
 
 # CREATE CHUNKING
-Chunking = get_chunker(name="character", chunk_size=1024, chunk_overlap=200)
+Chunking = get_chunker(name="semantic", embeddings="BAAI/bge-small-en")
 chunks = Chunking.split_document(docs)
 
 # CREATE EMBEDDINGS
 Embedding = get_embedding(
-    name="huggingface", model_name="BAAI/bge-large-en"
+    name="huggingface", model_name="BAAI/bge-small-en"
 )
 embedding_instance = Embedding.get_instance_for_vector_store()
 
