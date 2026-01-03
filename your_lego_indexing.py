@@ -17,7 +17,7 @@ data_prep = DataPreparation(
 
 docs, errors = data_prep.process_files(
     folder_or_file="data/huggingface_images",  
-    format_output="markdown"  
+    format_output="txt"  
 )
 if errors:
     print(f"Erros encontrados: {errors}")
@@ -25,12 +25,12 @@ if errors:
 
 
 # CREATE CHUNKING
-Chunking = get_chunker(name="character", chunk_size=500, chunk_overlap=0)
+Chunking = get_chunker(name="character", chunk_size=1024, chunk_overlap=200)
 chunks = Chunking.split_document(docs)
 
 # CREATE EMBEDDINGS
 Embedding = get_embedding(
-    name="huggingface", model_name="sentence-transformers/all-MiniLM-L6-v2"
+    name="huggingface", model_name="BAAI/bge-large-en"
 )
 embedding_instance = Embedding.get_instance_for_vector_store()
 
