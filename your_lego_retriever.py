@@ -1,10 +1,12 @@
 from src.factory import get_embedding, get_vector_store
+from src.llm.configure_provider import LLM
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
 # CREATE EMBEDDINGS
-Embedding = get_embedding(
-    name="huggingface", model_name="BAAI/bge-small-en"
-)
+Embedding = get_embedding(name="huggingface", model_name="BAAI/bge-small-en")
 embedding_instance = Embedding.get_instance_for_vector_store()
 
 
@@ -20,8 +22,7 @@ Vector_Store = get_vector_store(
 # retriver
 instance_vector_store = Vector_Store.get_instance_vector_store()
 retriever = instance_vector_store.as_retriever(
-    search_type="similarity",
-    search_kwargs={"k": 5}
+    search_type="similarity", search_kwargs={"k": 5}
 )
 
 question = "What was the non-GAAP operating efficiency ratio for SVB Financial in 2016?"
@@ -34,4 +35,7 @@ for i in docs:
     n += 1
 
 
+llm = LLM(base_url=os.getenv("GROQ_BASE_URL"), api_key=os.getenv("GROQ_MODEL"))
 
+
+response = llm.get_client()

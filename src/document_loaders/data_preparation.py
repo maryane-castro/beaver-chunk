@@ -15,7 +15,10 @@ from src.document_loaders.utils.detects_folder_or_file import (
 )
 from langchain_core.documents import Document
 
-from src.document_loaders.graph_description_options import lms_local_options, remote_vlm_options
+from src.document_loaders.graph_description_options import (
+    lms_local_options,
+    remote_vlm_options,
+)
 
 
 class DataPreparation:
@@ -26,26 +29,26 @@ class DataPreparation:
         api_key=None,
         base_url="http://localhost:11434/chat/completions",
         model="gemma3:4b",
-        provider_vlm=None
+        provider_vlm=None,
     ):
-        self.pipeline_options = PdfPipelineOptions(
-            enable_remote_services=True
-        )
+        self.pipeline_options = PdfPipelineOptions(enable_remote_services=True)
         self.pipeline_options.do_picture_description = True
-
 
         if provider_vlm == "remote":
             self.pipeline_options.picture_description_options = remote_vlm_options(
                 api_key=api_key, base_url=base_url
             )
-        elif provider_vlm == "local": 
+        elif provider_vlm == "local":
             self.pipeline_options.picture_description_options = lms_local_options(
-            model=model, base_url=base_url, 
-        )
+                model=model,
+                base_url=base_url,
+            )
         else:
-            self.pipeline_options.picture_description_options = PictureDescriptionVlmOptions(
-                repo_id=repo_id,
-                prompt=prompt,
+            self.pipeline_options.picture_description_options = (
+                PictureDescriptionVlmOptions(
+                    repo_id=repo_id,
+                    prompt=prompt,
+                )
             )
 
         self.pipeline_options.images_scale = 2.0

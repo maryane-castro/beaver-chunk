@@ -3,30 +3,23 @@ from docling.datamodel.pipeline_options import (
 )
 
 
-
-
-
 def lms_local_options(model: str, base_url: str, api_key: str = None):
 
     options = PictureDescriptionApiOptions(
         url=base_url,
-        params=dict(
-            model=model,
-            seed=42,
-            max_completion_tokens=200,
-            api_key=api_key
-        ),
+        params=dict(model=model, seed=42, max_completion_tokens=200, api_key=api_key),
         prompt="Describe the image in three sentences. Be concise and accurate.",
         timeout=90,
     )
     return options
 
 
+def remote_vlm_options(
+    api_key: str,
+    base_url: str = "https://api.groq.com/openai/v1/chat/completions",
+    model: str = "meta-llama/llama-4-maverick-17b-128e-instruct",
+):
 
-def remote_vlm_options(api_key : str, 
-                     base_url : str = "https://api.groq.com/openai/v1/chat/completions", 
-                     model : str = "meta-llama/llama-4-maverick-17b-128e-instruct"):
-    
     url = base_url
 
     options = PictureDescriptionApiOptions(
@@ -45,6 +38,3 @@ def remote_vlm_options(api_key : str,
     )
 
     return options
-
-
-

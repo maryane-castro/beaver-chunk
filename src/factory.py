@@ -1,14 +1,12 @@
-from chunking import hierarchical
-from src.chunking import character, semantic
+from src.chunking import character, semantic, hierarchical
 from src.embedding import huggingface
 from src.vector_store import chroma
-
 
 
 _CHUNKERS = {
     "character": character.Character,
     "recursive": hierarchical.Hierarchical,
-    "semantic" : semantic.Semantic
+    "semantic": semantic.Semantic,
 }
 
 
@@ -18,7 +16,6 @@ _EMBEDDINGS = {
 
 
 _VECTOR_STORES = {"chroma": chroma.Chroma_Store}
-
 
 
 def get_chunker(name="character", **kwargs):

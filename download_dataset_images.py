@@ -5,6 +5,7 @@ do Hugging Face.
 As imagens serão salvas em ./data/huggingface_images/ e você pode processá-las
 depois com o your_lego_indexing.py
 """
+
 from datasets import load_dataset
 from PIL import Image
 import io
@@ -23,13 +24,13 @@ def download_images_from_dataset(num_samples=10, save_path="./data/huggingface_i
         tuple: (saved_paths, metadata) - Caminhos das imagens e metadados
     """
     print(f"[INFO] Carregando dataset do Hugging Face com streaming...")
-    print(f"[INFO] Baixando primeiros {num_samples} exemplos (sem baixar dataset completo)")
+    print(
+        f"[INFO] Baixando primeiros {num_samples} exemplos (sem baixar dataset completo)"
+    )
 
     # Carrega o dataset com streaming (não baixa tudo)
     dataset_stream = load_dataset(
-        "racineai/VDR_ibm-research_REAL-MM-RAG",
-        split="train",
-        streaming=True
+        "racineai/VDR_ibm-research_REAL-MM-RAG", split="train", streaming=True
     )
 
     # Pega apenas os primeiros N exemplos
@@ -46,10 +47,10 @@ def download_images_from_dataset(num_samples=10, save_path="./data/huggingface_i
     for idx, sample in enumerate(dataset):
         try:
             # Extrai informações do sample
-            sample_id = sample['id']
-            query = sample['query']
-            answer = sample['answer']
-            image_data = sample['image']
+            sample_id = sample["id"]
+            query = sample["query"]
+            answer = sample["answer"]
+            image_data = sample["image"]
 
             # Define o nome do arquivo da imagem
             image_filename = f"{save_path}/image_{idx:03d}_{sample_id[:8]}.png"
@@ -61,7 +62,9 @@ def download_images_from_dataset(num_samples=10, save_path="./data/huggingface_i
                 img = Image.open(io.BytesIO(image_data))
                 img.save(image_filename)
             else:
-                print(f"[WARN] Tipo de imagem desconhecido no sample {idx}: {type(image_data)}")
+                print(
+                    f"[WARN] Tipo de imagem desconhecido no sample {idx}: {type(image_data)}"
+                )
                 continue
 
             saved_paths.append(image_filename)
@@ -72,7 +75,7 @@ def download_images_from_dataset(num_samples=10, save_path="./data/huggingface_i
                 "sample_id": sample_id,
                 "image_path": image_filename,
                 "query": query,
-                "answer": answer
+                "answer": answer,
             }
             metadata_list.append(metadata)
 
@@ -88,20 +91,20 @@ def download_images_from_dataset(num_samples=10, save_path="./data/huggingface_i
     print(f"  🖼️  Imagens salvas: {len(saved_paths)}")
     print(f"\n[PRÓXIMOS PASSOS]")
     print(f"  1. Use o your_lego_indexing.py para processar as imagens")
-    print(f"  2. Altere o caminho para: folder_or_file=\"{save_path}\"")
+    print(f'  2. Altere o caminho para: folder_or_file="{save_path}"')
 
     # Salva metadados em arquivo texto para referência
     metadata_file = f"{save_path}/metadata.txt"
-    with open(metadata_file, 'w', encoding='utf-8') as f:
+    with open(metadata_file, "w", encoding="utf-8") as f:
         f.write("METADADOS DO DATASET VDR_ibm-research_REAL-MM-RAG\n")
-        f.write("="*80 + "\n\n")
+        f.write("=" * 80 + "\n\n")
         for meta in metadata_list:
             f.write(f"Imagem {meta['index']+1}:\n")
             f.write(f"  ID: {meta['sample_id']}\n")
             f.write(f"  Arquivo: {meta['image_path']}\n")
             f.write(f"  Query: {meta['query']}\n")
             f.write(f"  Answer: {meta['answer']}\n")
-            f.write("-"*80 + "\n\n")
+            f.write("-" * 80 + "\n\n")
 
     print(f"  📄 Metadados salvos em: {metadata_file}\n")
 
@@ -114,6 +117,5 @@ if __name__ == "__main__":
 
     # Baixa as imagens
     image_paths, metadata = download_images_from_dataset(
-        num_samples=NUM_SAMPLES,
-        save_path="./data/huggingface_images"
+        num_samples=NUM_SAMPLES, save_path="./data/huggingface_images"
     )

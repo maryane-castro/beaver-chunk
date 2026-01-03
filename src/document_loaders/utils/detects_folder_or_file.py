@@ -19,7 +19,7 @@ def normalize_and_rename(path):
     Se a nova extensão final for .txt, converte para .md.
     """
     dirname, filename = os.path.split(path)
-    parts = filename.split('.')
+    parts = filename.split(".")
 
     # Sem extensão ou formato inesperado → deixa como está
     if len(parts) < 2:
