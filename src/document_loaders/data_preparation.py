@@ -10,12 +10,12 @@ from docling.document_converter import (
 from docling.datamodel.pipeline_options import PictureDescriptionVlmOptions
 from docling.exceptions import ConversionError
 
-from release.app.core.src.indexing.data_preparation.utils.detects_folder_or_file import (
+from src.document_loaders.utils.detects_folder_or_file import (
     detects_folder_or_file,
 )
 from langchain_core.documents import Document
 
-from release.app.core.src.indexing.data_preparation.graph_description_options import lms_local_options, remote_vlm_options
+from src.document_loaders.graph_description_options import lms_local_options, remote_vlm_options
 
 
 class DataPreparation:

@@ -16,7 +16,7 @@ data_prep = DataPreparation(
 )
 
 docs, errors = data_prep.process_files(
-    folder_or_file="./data/documents",  
+    folder_or_file="data/huggingface_images",  
     format_output="markdown"  
 )
 if errors:

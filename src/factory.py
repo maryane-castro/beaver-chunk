@@ -1,4 +1,3 @@
-from src.document_loaders import txt_loader, pdf_loader
 from src.chunking import character, recursive
 from src.embedding import huggingface
 from src.vector_store import chroma
