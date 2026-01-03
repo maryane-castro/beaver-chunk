@@ -30,7 +30,6 @@ class DeepEval:
                 "Check whether the facts in 'actual output' contradict any facts in 'expected output'.",
                 "Verify whether the key facts in 'expected output' are present in 'actual output'.",
                 "Do NOT penalize additional content, as long as it is accurate and consistent.",
-                
             ],
             evaluation_params=[
                 LLMTestCaseParams.INPUT,

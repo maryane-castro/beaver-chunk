@@ -38,8 +38,5 @@ for i in docs:
 llm = LLM(base_url=os.getenv("GROQ_BASE_URL"), api_key=os.getenv("GROQ_API_KEY"))
 
 
-response = llm.generate_response(
-    user_input=question,
-    docs_retriever=docs
-)
+response = llm.generate_response(user_input=question, docs_retriever=docs)
 print("\n\n\n", response)
