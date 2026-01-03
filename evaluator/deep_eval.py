@@ -22,11 +22,15 @@ class DeepEval:
     def __init__(self, custom_llm=global_custom_llm):
         self.correctness_metric_professionalism = GEval(
             name="Correctness",
-            criteria="Determine whether the actual output is factually correct based on the expected output.",
+            criteria=(
+                "Determine whether the actual output is factually correct " 
+            ),
             evaluation_steps=[
-                "Check whether the facts in 'actual output' contradicts any facts in 'expected output'",
-                "You should also heavily penalize omission of detail",
-                "Vague language, or contradicting OPINIONS, are OK"
+                "Check whether the facts in 'actual output' contradict any facts in 'expected output'.",
+                "Verify whether the key facts in 'expected output' are present in 'actual output'.",
+                "Do NOT penalize additional content, as long as it is accurate and consistent.",
+                "Penalize missing key facts from the expected output.",
+                "Penalize hallucinated or incorrect facts."
             ],
             evaluation_params=[LLMTestCaseParams.INPUT, LLMTestCaseParams.ACTUAL_OUTPUT, LLMTestCaseParams.EXPECTED_OUTPUT],
             model=custom_llm
