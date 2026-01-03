@@ -1,5 +1,4 @@
 from src.factory import (
-    get_document_loader,
     get_chunker,
     get_embedding,
     get_vector_store,
@@ -7,10 +6,23 @@ from src.factory import (
 
 
 # CREATE DOCUMENT LOADER
-Document_Loader = get_document_loader(
-    name="txt", path_document="data/mock/description.txt"
+from src.document_loaders.data_preparation import DataPreparation
+
+# Inicializa o DataPreparation
+data_prep = DataPreparation(
+    repo_id="HuggingFaceTB/SmolVLM-256M-Instruct",
+    prompt="Describe the image in three sentences. Be consise and accurate.",
+    provider_vlm=None  # Opções: None (default), "local", "remote"
 )
-docs = Document_Loader.get_documents()
+
+docs, errors = data_prep.process_files(
+    folder_or_file="./data/documents",  
+    format_output="markdown"  
+)
+if errors:
+    print(f"Erros encontrados: {errors}")
+
+
 
 # CREATE CHUNKING
 Chunking = get_chunker(name="character", chunk_size=500, chunk_overlap=0)

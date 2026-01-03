@@ -1,7 +1,7 @@
 # 🦫 Beaver-Chunk
 
 <p align="center">
-  <img src="assets/icon.png" 
+  <img src="data/assets/icon.png" 
        alt="Beaver-Chunk Logo"
        width="200"
        style="border-radius:20px;"/>

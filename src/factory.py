@@ -4,7 +4,6 @@ from src.embedding import huggingface
 from src.vector_store import chroma
 
 
-_LOADER_DOCUMENTS = {"txt": txt_loader.TXT_Loader, "pdf": pdf_loader.PDF_Loader}
 
 _CHUNKERS = {
     "character": character.Character,
@@ -20,10 +19,6 @@ _EMBEDDINGS = {
 _VECTOR_STORES = {"chroma": chroma.Chroma_Store}
 
 
-def get_document_loader(name="txt", **kwargs):
-    if name not in _LOADER_DOCUMENTS:
-        raise ValueError(f"Document Loader '{name}' não existe")
-    return _LOADER_DOCUMENTS[name](**kwargs)
 
 
 def get_chunker(name="character", **kwargs):
