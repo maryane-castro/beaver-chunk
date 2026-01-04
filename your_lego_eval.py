@@ -1,4 +1,4 @@
-from evaluator.deep_eval import DeepEval
+from src.evaluator.deep_eval import DeepEval
 
 
 deep_eval = DeepEval()

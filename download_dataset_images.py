@@ -9,6 +9,7 @@ depois com o your_lego_indexing.py
 from datasets import load_dataset
 from PIL import Image
 import io
+import csv
 from pathlib import Path
 
 
@@ -93,6 +94,23 @@ def download_images_from_dataset(num_samples=10, save_path="./data/huggingface_i
     print(f"  1. Use o your_lego_indexing.py para processar as imagens")
     print(f'  2. Altere o caminho para: folder_or_file="{save_path}"')
 
+    # Salva metadados em arquivo CSV
+    csv_file = f"{save_path}/metadata.csv"
+    with open(csv_file, "w", encoding="utf-8", newline="") as f:
+        fieldnames = ["id", "query", "answer", "image_path"]
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+
+        writer.writeheader()
+        for meta in metadata_list:
+            writer.writerow({
+                "id": meta["sample_id"],
+                "query": meta["query"],
+                "answer": meta["answer"],
+                "image_path": meta["image_path"]
+            })
+
+    print(f"  📄 Metadados salvos em CSV: {csv_file}")
+
     # Salva metadados em arquivo texto para referência
     metadata_file = f"{save_path}/metadata.txt"
     with open(metadata_file, "w", encoding="utf-8") as f:
@@ -106,7 +124,7 @@ def download_images_from_dataset(num_samples=10, save_path="./data/huggingface_i
             f.write(f"  Answer: {meta['answer']}\n")
             f.write("-" * 80 + "\n\n")
 
-    print(f"  📄 Metadados salvos em: {metadata_file}\n")
+    print(f"  📄 Metadados salvos em TXT: {metadata_file}\n")
 
     return saved_paths, metadata_list
 
