@@ -5,7 +5,7 @@ from deepeval.metrics import GEval
 from deepeval.test_case import LLMTestCase, LLMTestCaseParams
 
 
-from evaluator.deep_eval_custom_llm import OpenAIModelCustom
+from src.evaluator.deep_eval_custom_llm import OpenAIModelCustom
 
 import os
 from pathlib import Path
